@@ -6,6 +6,7 @@ public class Chessboard {
     private byte width;
     // заполнение клетки символом
     private String cell;
+
     // создаем конструктор
     public Chessboard(byte height, byte width, String cell) {
         this.height = height;

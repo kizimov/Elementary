@@ -1,8 +1,7 @@
 package service;
 
-import model.Triangele;
+import model.Triangle;
 import utility.ConsoleUtils;
-import utility.TriangeleUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,13 +21,14 @@ public class ArrayTriangeleService {
     public void repeatEnter() throws IOException {/*запуск программы заполнения данных с повтором Yes/No */
         String fromConsole = "";
         String message = "Формат ввода (разделитель - запятая): <имя>, <длина стороны>, <длина стороны>, <длина стороны> ";
-        String regex ="^\\w*,\\d+\\.?\\d*,\\d+\\.?\\d*,\\d+\\.?\\d*";
-        fromConsole = ConsoleUtils.checkFormat(message,regex); //проверка правельности ввода строки с параметрами
-        Triangele triangele = new TriangeleService().setParameters(fromConsole);//возвращаем объект из строки
-        setArrayTriangele(triangele.getName(), triangele.getArea());
+        String regex = "^\\w*,\\d+\\.?\\d*,\\d+\\.?\\d*,\\d+\\.?\\d*";
+        fromConsole = ConsoleUtils.checkFormat(message, regex); //проверка правельности ввода строки с параметрами
+        Triangle triangle = new TriangleService().setParameters(fromConsole);//возвращаем объект из строки
+        setArrayTriangele(triangle.getName(), triangle.getArea());
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Хотите добавить треугольники (Yes/No)  ");
         String answerStr = reader.readLine().toLowerCase(Locale.ROOT);
+        reader.close();
         if (answerStr.equals("y") || answerStr.equals("yes")) {
             repeatEnter();
         }

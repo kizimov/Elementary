@@ -1,6 +1,6 @@
 package utility;
 
-import handler.TriangeleHandler;
+import handler.TriangleHandler;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -19,8 +19,7 @@ public class TriangeleUtils {
                 shouldContinue = false;
             } catch (InputMismatchException exception) {
                 System.out.println(exception.getMessage());
-                new TriangeleHandler().manualInput();
-
+                new TriangleHandler().manualInput();
             }
         }
     }

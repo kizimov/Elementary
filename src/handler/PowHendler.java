@@ -16,7 +16,7 @@ public class PowHendler extends RepeatBlock {
         powParams = PowService.getParams(ConsoleUtils.checkFormat(message, regex));/*отправляем на проверку соответствия типа*/
         base = powParams[0];
         exponent = powParams[1];
-        System.out.println(PowService.pow(base,exponent));
+        System.out.println(PowService.pow(base, exponent));
         if (PowHendler.restart()) manualInput();
     }
 }

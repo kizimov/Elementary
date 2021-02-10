@@ -13,7 +13,11 @@ public class RepeatBlock {
             System.out.println("Не верный выбор. Укажите (Yes/No) ");/*проверяем,до тех пор пока не введут yes/no в любом размере*/
             answer = scanner.next().toLowerCase(Locale.ROOT);
         }
-        if (answer.equals("y") || answer.equals("yes")) return true;
+        if (answer.equals("y") || answer.equals("yes")) {
+            scanner.close();
+            return true;
+        }
+        scanner.close();
         return false;
     }
 
@@ -25,9 +29,10 @@ public class RepeatBlock {
             answer = scanner.nextByte();
         } else {
             String badAnswer = scanner.next();
-            System.out.println("Не верный выбор"+badAnswer);
+            System.out.println("Не верный выбор" + badAnswer);
             RepeatBlock.start();
         }
+        scanner.close();
         return answer;
     }
 
@@ -40,7 +45,11 @@ public class RepeatBlock {
             System.out.println("Не верный выбор. Укажите (Yes/No) ");/*проверяем,до тех пор пока не введут yes/no в любом размере*/
             answer = scanner.next().toLowerCase(Locale.ROOT);
         }
-        if (answer.equals("y") || answer.equals("yes")) return true;
+        if (answer.equals("y") || answer.equals("yes")) {
+            scanner.close();
+            return true;
+        }
+        scanner.close();
         return false;
     }
 }

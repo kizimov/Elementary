@@ -1,6 +1,6 @@
 package model;
 
-public class Triangele {
+public class Triangle {
 
     private String name; /*имя треугольника*/
 
@@ -11,6 +11,7 @@ public class Triangele {
     public String getName() {
         return name;
     }
+
     public double getArea() {
         return area;
     }

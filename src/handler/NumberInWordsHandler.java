@@ -26,7 +26,6 @@ public class NumberInWordsHandler extends RepeatBlock {
                     value = scanner.next();
                     System.out.println("Не верный ввод." + massage);
                 } else {
-
                     number = scanner.nextInt();
                     if (number < min) throw new InputMismatchException("Число меньше допустимого.");
                     if (number > max) throw new InputMismatchException("Число больше допустимого.");
@@ -40,6 +39,7 @@ public class NumberInWordsHandler extends RepeatBlock {
                 System.out.println("Число выходит за параметры.");
             }
         }
+        scanner.close();
         if (NumberInWordsHandler.restart()) manualInput();
     }
 }

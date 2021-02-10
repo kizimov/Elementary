@@ -6,7 +6,7 @@ import utility.CheckFileVoidUtils;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ChangeStringHandler{
+public class ChangeStringHandler {
     public static void manualInput() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Укажите путь к файлу: ");
@@ -17,6 +17,6 @@ public class ChangeStringHandler{
         String replacementString = scanner.next();
         if (CheckFileVoidUtils.validationFile(path2)) {
             new ChangeStringService().parsFile(path2, findString, replacementString);
-        } else ChangeStringHandler.manualInput();
+        } else manualInput();
     }
 }

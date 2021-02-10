@@ -21,6 +21,4 @@ public class LuckyTicketService {
             System.out.println("Не счастливый билет");
         }
     }
-
-
 }

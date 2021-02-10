@@ -9,5 +9,4 @@ public class LuckyTicketUtils {
         }
         return unit;
     }
-
 }

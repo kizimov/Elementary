@@ -13,6 +13,7 @@ public class CountEntryHandler{
         String path1 = scanner.next();
         System.out.println("Введите образец для подсчета: ");
         String sample = scanner.next();
+        scanner.close();
         if (CheckFileVoidUtils.validationFile(path1)) {
             new CountEntryService().parsFile(path1, sample);
         } else CountEntryHandler.manualInput();

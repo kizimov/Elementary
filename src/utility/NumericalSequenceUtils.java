@@ -6,9 +6,7 @@ public class NumericalSequenceUtils {
         for (i = 0; i < Math.sqrt(number); i++) {
             if (i < Math.sqrt(number) - 1) {
                 System.out.print(i + ", ");
-            } else {
-                System.out.println(i);
-            }
+            } else System.out.println(i);
         }
     }
 }

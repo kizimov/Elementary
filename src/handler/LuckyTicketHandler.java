@@ -21,6 +21,7 @@ public class LuckyTicketHandler extends RepeatBlock {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Укажите путь к файлу: ");
         String path1 = scanner.next();
+        scanner.close();
         if (CheckFileVoidUtils.validationFile(path1)) {
             List<String> list = ConsoleUtils.parsFile(path1);
             String methodName = list.get(0).toLowerCase(Locale.ROOT);
@@ -34,11 +35,7 @@ public class LuckyTicketHandler extends RepeatBlock {
                     break;
             }
         } else new LuckyTicketHandler().manualInput();
-
         if (LuckyTicketHandler.restart()) manualInput();
-
     }
-
-
 }
 

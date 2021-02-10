@@ -9,7 +9,7 @@ public class Application extends RepeatBlock {
         run();
     }
 
-    public static void run() throws IOException{
+    public static void run() throws IOException {
         System.out.println("""
                 1. Шахматная доска.
                 2. Анализ конвертов.
@@ -29,7 +29,7 @@ public class Application extends RepeatBlock {
             }
             case 1 -> new ChessboardHandler().manualInput();
             case 2 -> new EnvelopHandler().manualInput();
-            case 3 -> new TriangeleHandler().manualInput();
+            case 3 -> new TriangleHandler().manualInput();
             case 4 -> new ParseHandler().choiceMode();
             case 5 -> new NumberInWordsHandler().manualInput();
             case 6 -> new LuckyTicketHandler().manualInput();

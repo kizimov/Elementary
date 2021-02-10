@@ -16,7 +16,6 @@ public class FibanacheHendler extends RepeatBlock {
         String fromConsole = ConsoleUtils.checkFormat(message, regex);/*отправляем на проверку соответствия типа*/
         rangeFibanache = FibanacheService.getRange(fromConsole);
         numberFibanache = FibanacheService.fibanacheSeries(rangeFibanache);
-        //TODO вставить проверку на отрицательные и участок
         FibanacheUtils.printUnits(rangeFibanache, numberFibanache);
         if (FibanacheHendler.restart()) manualInput();
     }

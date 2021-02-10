@@ -5,12 +5,12 @@ import utility.RepeatBlock;
 
 import java.io.IOException;
 
-public class TriangeleHandler extends RepeatBlock {
+public class TriangleHandler extends RepeatBlock {
 
     public void manualInput() throws IOException {
         ArrayTriangeleService arrayTriangeleService = new ArrayTriangeleService();
         arrayTriangeleService.repeatEnter();
         arrayTriangeleService.sortAndPrint();
-        if (TriangeleHandler.restart()) manualInput();
+        if (TriangleHandler.restart()) manualInput();
     }
 }

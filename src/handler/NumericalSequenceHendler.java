@@ -1,6 +1,5 @@
 package handler;
 
-import service.NumericalSequenceService;
 import utility.ConsoleUtils;
 import utility.NumericalSequenceUtils;
 import utility.RepeatBlock;
@@ -13,6 +12,6 @@ public class NumericalSequenceHendler extends RepeatBlock {
         final String regex = "\\d*"; /*шаблон для проверки*/
         int number = Integer.parseInt(ConsoleUtils.checkFormat(message, regex)); /*отправляем на проверку соответствия типа*/
         NumericalSequenceUtils.printUnits(number);
-        if(NumericalSequenceHendler.restart()) manualInput();
+        if (NumericalSequenceHendler.restart()) manualInput();
     }
 }

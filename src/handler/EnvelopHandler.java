@@ -45,6 +45,7 @@ public class EnvelopHandler extends RepeatBlock {
             }
         }
         Envelope envelope = new Envelope(myEnvelope);
+        reader.close();
         return envelope;
     }
 }
