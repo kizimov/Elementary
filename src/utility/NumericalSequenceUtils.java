@@ -1,14 +1,16 @@
 package utility;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NumericalSequenceUtils {
-    public static void printUnits(int number) {
+    public static List printUnits(int number) {
         int i;
+
+        List sequence = new ArrayList<Integer>();
         for (i = 0; i < Math.sqrt(number); i++) {
-            if (i < Math.sqrt(number) - 1) {
-                System.out.print(i + ", ");
-            } else {
-                System.out.println(i);
-            }
+            sequence.add(i);
         }
+        return sequence;
     }
 }
