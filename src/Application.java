@@ -9,7 +9,7 @@ public class Application {
         run();
     }
 
-    public static void run() throws IOException{
+    public static void run() throws IOException {
         System.out.println("""
                 1. Шахматная доска.
                 2. Анализ конвертов.

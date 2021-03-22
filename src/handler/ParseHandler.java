@@ -15,6 +15,7 @@ public class ParseHandler {
 
         if (sc.hasNextInt()) { /*смотрим в будущее*/
             int choice = sc.nextInt();/*считывает из консоли и использует как Int*/
+            sc.close();
             switch (choice) {
                 case 1 -> new CountEntryHandler().manualInput();
                 case 2 -> new ChangeStringHandler().manualInput();

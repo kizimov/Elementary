@@ -44,6 +44,7 @@ public class EnvelopHandler implements Handler{
             }
         }
         Envelope envelope = new Envelope(myEnvelope);
+        reader.close();
         return envelope;
     }
 }

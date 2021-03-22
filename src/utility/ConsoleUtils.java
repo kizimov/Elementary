@@ -27,6 +27,7 @@ public class ConsoleUtils {
                 System.out.println(exception.getMessage());
             }
         }
+        scanner.close();
         return value;
     }
 
@@ -49,6 +50,7 @@ public class ConsoleUtils {
                 System.out.println(exception.getMessage());
             }
         }
+        scanner.close();
         return str;
     }
 
@@ -61,6 +63,7 @@ public class ConsoleUtils {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 fromConsole = reader.readLine().replace(" ", "").replace("    ", ""); //
                 // считываеи строку из консоли и очищаем ее от пробелов и табов
+                reader.close();
                 if (!fromConsole.matches(regex)) { /*проверка на соответствие шаблону */
                     throw new InputMismatchException("не верный формат ввода данных");
                 }
@@ -68,7 +71,7 @@ public class ConsoleUtils {
             } catch (InputMismatchException | IOException exception) {
                 System.out.println(exception.getMessage());
             }
-        }
+                    }
         return fromConsole;
     }
 

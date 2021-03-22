@@ -27,10 +27,7 @@ public class ChessboardService {
             } else {
                 stringBuilder.append(evenString);
             }
-            if (i < chessboard.getHeight()) {
-                stringBuilder.append("\n");
-            }
-
+            if (i < chessboard.getHeight()) stringBuilder.append("\n");
         }
         return stringBuilder.toString();
     }

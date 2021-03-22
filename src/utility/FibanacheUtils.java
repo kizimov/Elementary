@@ -6,9 +6,7 @@ public class FibanacheUtils {
         for (int i = rangeFibanache[0]; i <= rangeFibanache[1]; i++) {
             if (i < rangeFibanache[1]) {
                 System.out.print(numberFibanache[i] + ", ");
-            } else {
-                System.out.print(numberFibanache[i]);
-            }
+            } else System.out.print(numberFibanache[i]);
         }
     }
 }

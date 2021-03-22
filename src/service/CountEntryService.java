@@ -17,21 +17,15 @@ public class CountEntryService {
         int i = 0;
         if (FileUtils.validationFile(path)) {
             List<String> list = Files.readAllLines(file1);
-
             for (String words : list) { /*сравниваем строки на содержание*/
                 counter++;
                 countOfEntry = 0;
                 if (words.indexOf(sample, 0) > -1) {
                     entry = words.indexOf(sample, 0);
-
                     while (words.length() - words.indexOf(sample, entry) + 1 > sample.length()) {
-                        if (words.indexOf(sample, entry) > 0) {
-                            countOfEntry++;
-                        }
+                        if (words.indexOf(sample, entry) > 0) countOfEntry++;
                         entry = words.indexOf(sample, entry + 1);
-                        if (entry < 0) {
-                            break;
-                        }
+                        if (entry < 0) break;
                     }
                 }
                 countAll = countAll + countOfEntry;
