@@ -1,11 +1,11 @@
 package handler;
 
-import utility.RepeatBlock;
+import utility.ConsoleUtils;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ParseHandler extends RepeatBlock {
+public class ParseHandler {
     public void choiceMode() throws IOException {
         Scanner sc = new Scanner(System.in);/*используем класс Scanner*/
         System.out.println("Выбирите режим:");
@@ -16,20 +16,17 @@ public class ParseHandler extends RepeatBlock {
         if (sc.hasNextInt()) { /*смотрим в будущее*/
             int choice = sc.nextInt();/*считывает из консоли и использует как Int*/
             switch (choice) {
-                case 1:
-                    CountEntryHandler.manualInput();
-                    break;
-                case 2:
-                    ChangeStringHandler.manualInput();
-                    break;
-                default:
+                case 1 -> new CountEntryHandler().manualInput();
+                case 2 -> new ChangeStringHandler().manualInput();
+                default -> {
                     System.out.println("Не верный ввод.");
                     choiceMode();
+                }
             }
         } else {
             System.out.println("не верный ввод:");
             choiceMode();
         }
-        if (ParseHandler.restart()) choiceMode();
+        if (ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) choiceMode();
     }
 }
