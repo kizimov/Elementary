@@ -20,6 +20,4 @@ public class FibanacheService {
         }
         return numberFibanache;
     }
-
-
 }
