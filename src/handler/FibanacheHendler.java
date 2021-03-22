@@ -3,11 +3,10 @@ package handler;
 import service.FibanacheService;
 import utility.ConsoleUtils;
 import utility.FibanacheUtils;
-import utility.RepeatBlock;
 
 import java.io.IOException;
 
-public class FibanacheHendler extends RepeatBlock {
+public class FibanacheHendler implements Handler{
     public void manualInput() throws IOException {
         int[] rangeFibanache;
         int[] numberFibanache;
@@ -16,8 +15,7 @@ public class FibanacheHendler extends RepeatBlock {
         String fromConsole = ConsoleUtils.checkFormat(message, regex);/*отправляем на проверку соответствия типа*/
         rangeFibanache = FibanacheService.getRange(fromConsole);
         numberFibanache = FibanacheService.fibanacheSeries(rangeFibanache);
-        //TODO вставить проверку на отрицательные и участок
         FibanacheUtils.printUnits(rangeFibanache, numberFibanache);
-        if (FibanacheHendler.restart()) manualInput();
+        if (ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) manualInput();
     }
 }
