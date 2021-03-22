@@ -7,11 +7,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ConsoleUtils {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static byte getPositiveByteMinValue(String message, byte min) {
         byte value = 0;
@@ -75,7 +76,29 @@ public class ConsoleUtils {
         Path file1 = Path.of(path);
         List<String> list = Files.readAllLines(file1);
         return list;
-
     }
 
+        public static boolean restart(String message) {
+            System.out.println(message);
+            String answer = scanner.next().toLowerCase(Locale.ROOT);/*полученный ответ приводим к Lower*/
+            while (!(answer.equals("y") || answer.equals("yes") || answer.equals("n") || answer.equals("no"))) {
+                System.out.println("Не верный выбор. Укажите (Yes/No) ");/*проверяем,до тех пор пока не введут yes/no в любом размере*/
+                answer = scanner.next().toLowerCase(Locale.ROOT);
+            }
+            if (answer.equals("y") || answer.equals("yes")) return true;
+            return false;
+        }
+
+        public static byte start() {
+            byte answer = 0;
+            System.out.print("Сделайте свой выбор (0-9): ");
+            if (scanner.hasNextByte()) {
+                answer = scanner.nextByte();
+            } else {
+                String badAnswer = scanner.next();
+                System.out.println("Не верный выбор" + badAnswer);
+                ConsoleUtils.start();
+            }
+            return answer;
+        }
 }
