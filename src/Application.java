@@ -1,9 +1,9 @@
 import handler.*;
-import utility.RepeatBlock;
+import utility.ConsoleUtils;
 
 import java.io.IOException;
 
-public class Application extends RepeatBlock {
+public class Application {
 
     public static void main(String[] args) throws IOException {
         run();
@@ -21,7 +21,7 @@ public class Application extends RepeatBlock {
                 8. Ряд Фибаначи для заданного диапазона.
                 9. Возведение в степень.
                 0. Закрыть программу.""");
-        byte task = RepeatBlock.start();
+        byte task = ConsoleUtils.start();
         switch (task) {
             case 0 -> {
                 System.out.println("Выход из программы....");
@@ -29,15 +29,15 @@ public class Application extends RepeatBlock {
             }
             case 1 -> new ChessboardHandler().manualInput();
             case 2 -> new EnvelopHandler().manualInput();
-            case 3 -> new TriangeleHandler().manualInput();
+            case 3 -> new TriangleHandler().manualInput();
             case 4 -> new ParseHandler().choiceMode();
             case 5 -> new NumberInWordsHandler().manualInput();
             case 6 -> new LuckyTicketHandler().manualInput();
             case 7 -> new NumericalSequenceHendler().manualInput();
             case 8 -> new FibanacheHendler().manualInput();
-            case 9 -> new PowHendler().manualInput();
+            case 9 -> new PowHandler().manualInput();
             default -> System.out.println("Выбирите из существующих пунктов");
         }
-        if (Application.restartMain()) run();
+        if (ConsoleUtils.restart("Желаете другую программу? (Yes/No):")) run();
     }
 }
