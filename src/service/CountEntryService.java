@@ -1,6 +1,6 @@
 package service;
 
-import utility.CheckFileVoidUtils;
+import utility.FileUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ public class CountEntryService {
         int countAll = 0;
         int entry = 0;
         int i = 0;
-        if (CheckFileVoidUtils.validationFile(path)) {
+        if (FileUtils.validationFile(path)) {
             List<String> list = Files.readAllLines(file1);
 
             for (String words : list) { /*сравниваем строки на содержание*/
