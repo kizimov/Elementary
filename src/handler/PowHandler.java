@@ -2,11 +2,8 @@ package handler;
 
 import service.PowService;
 import utility.ConsoleUtils;
-import utility.RepeatBlock;
 
-import java.util.InputMismatchException;
-
-public class PowHendler extends RepeatBlock {
+public class PowHandler implements Handler{
     public void manualInput() {
         int[] powParams;
         int base;
@@ -16,7 +13,7 @@ public class PowHendler extends RepeatBlock {
         powParams = PowService.getParams(ConsoleUtils.checkFormat(message, regex));/*отправляем на проверку соответствия типа*/
         base = powParams[0];
         exponent = powParams[1];
-        System.out.println(PowService.pow(base,exponent));
-        if (PowHendler.restart()) manualInput();
+        System.out.println(PowService.pow(base, exponent));
+        if (ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) manualInput();
     }
 }
