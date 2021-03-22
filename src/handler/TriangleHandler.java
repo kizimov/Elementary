@@ -1,16 +1,16 @@
 package handler;
 
 import service.ArrayTriangeleService;
-import utility.RepeatBlock;
+import utility.ConsoleUtils;
 
 import java.io.IOException;
 
-public class TriangeleHandler extends RepeatBlock {
+public class TriangleHandler implements Handler{
 
     public void manualInput() throws IOException {
         ArrayTriangeleService arrayTriangeleService = new ArrayTriangeleService();
         arrayTriangeleService.repeatEnter();
         arrayTriangeleService.sortAndPrint();
-        if (TriangeleHandler.restart()) manualInput();
+        if (ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) manualInput();
     }
 }
