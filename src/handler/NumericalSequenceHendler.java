@@ -1,18 +1,16 @@
 package handler;
 
-import service.NumericalSequenceService;
 import utility.ConsoleUtils;
 import utility.NumericalSequenceUtils;
-import utility.RepeatBlock;
 
 import java.io.IOException;
 
-public class NumericalSequenceHendler extends RepeatBlock {
+public class NumericalSequenceHendler implements Handler{
     public void manualInput() throws IOException {
         String message = "Введите натуральное число:";
         final String regex = "\\d*"; /*шаблон для проверки*/
         int number = Integer.parseInt(ConsoleUtils.checkFormat(message, regex)); /*отправляем на проверку соответствия типа*/
-        NumericalSequenceUtils.printUnits(number);
-        if(NumericalSequenceHendler.restart()) manualInput();
+        System.out.println(NumericalSequenceUtils.printUnits(number).toString());
+        if(ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) manualInput();
     }
 }
