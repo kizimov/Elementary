@@ -3,17 +3,16 @@ package handler;
 import model.Envelope;
 import service.EnvelopeService;
 import utility.ConsoleUtils;
-import utility.RepeatBlock;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class EnvelopHandler extends RepeatBlock {
+public class EnvelopHandler implements Handler{
 
     public void manualInput() throws IOException {
         new EnvelopeService().plaiceInside(getEnvelop().getEnvelopeSide());
-        if (EnvelopHandler.restart()) manualInput();
+        if (ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) manualInput();
     }
 
     public double[] myEnvelope = new double[4];/*размеры сторон конвертов. Первый [0-1], Второй [2-3]*/
