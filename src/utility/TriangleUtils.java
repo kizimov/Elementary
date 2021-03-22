@@ -1,11 +1,11 @@
 package utility;
 
-import handler.TriangeleHandler;
+import handler.TriangleHandler;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
 
-public class TriangeleUtils {
+public class TriangleUtils {
 
     public static void matchingTriangle(double[] sides) throws IOException { /*проверка на матиматическое соответствие параметрам треугольника*/
 
@@ -19,7 +19,7 @@ public class TriangeleUtils {
                 shouldContinue = false;
             } catch (InputMismatchException exception) {
                 System.out.println(exception.getMessage());
-                new TriangeleHandler().manualInput();
+                new TriangleHandler().manualInput();
 
             }
         }
