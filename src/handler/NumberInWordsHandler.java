@@ -1,15 +1,14 @@
 package handler;
 
 import service.NumberInWordsService;
-import utility.NumberInWordsUtils;
-import utility.RepeatBlock;
+import utility.ConsoleUtils;
 
 
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class NumberInWordsHandler extends RepeatBlock {
+public class NumberInWordsHandler implements Handler{
     public void manualInput() throws IOException {
         int number = 0;
         int max = 999999999;
@@ -26,13 +25,11 @@ public class NumberInWordsHandler extends RepeatBlock {
                     value = scanner.next();
                     System.out.println("Не верный ввод." + massage);
                 } else {
-
                     number = scanner.nextInt();
                     if (number < min) throw new InputMismatchException("Число меньше допустимого.");
                     if (number > max) throw new InputMismatchException("Число больше допустимого.");
                     shouldContinue = false;
-                    NumberInWordsUtils numberInWordsUtils = new NumberInWordsUtils();
-                    System.out.println(numberInWordsUtils.clearingSpace(new NumberInWordsService().numberInWords(number)));
+                    System.out.println(new NumberInWordsService().clearingSpace(new service.NumberInWordsService().numberInWords(number)));
                 }
             } catch (InputMismatchException exception) {
                 System.out.println(exception.getMessage());
@@ -40,6 +37,6 @@ public class NumberInWordsHandler extends RepeatBlock {
                 System.out.println("Число выходит за параметры.");
             }
         }
-        if (NumberInWordsHandler.restart()) manualInput();
+        if (ConsoleUtils.restart("\nЖелаете повторить? (Yes/No):")) manualInput();
     }
 }
