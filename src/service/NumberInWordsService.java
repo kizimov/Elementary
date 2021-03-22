@@ -1,7 +1,5 @@
 package service;
 
-import utility.NumberInWordsUtils;
-
 public class NumberInWordsService {
 
     public String numberInWords(int number) throws IllegalArgumentException {
@@ -17,7 +15,7 @@ public class NumberInWordsService {
 
         int caseNumber = 1;
         if (number < 0) prescription = "минус ";
-        number = new NumberInWordsUtils().absNumber(number);
+        number = Math.abs(number);
         int million = number / 1000000;
         int thousand = number / 1000;
         if (number == 0) prescription = "ноль";
@@ -90,5 +88,9 @@ public class NumberInWordsService {
             }
         }
         return prescription;
+    }
+
+    public String clearingSpace(String extraSpaces) {
+        return extraSpaces.trim().replace("  ", " ");
     }
 }
