@@ -1,6 +1,6 @@
 package main.handler;
 
-import main.service.ArrayTriangeleService;
+import main.service.ArrayTriangleService;
 import main.utility.ConsoleUtils;
 
 import java.io.IOException;
@@ -8,13 +8,13 @@ import java.io.IOException;
 public class TriangleHandler implements Handler{
 
     public void handle() {
-        ArrayTriangeleService arrayTriangeleService = new ArrayTriangeleService();
+        ArrayTriangleService arrayTriangleService = new ArrayTriangleService();
         try {
-            arrayTriangeleService.repeatEnter();
+            arrayTriangleService.repeatEnter();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        arrayTriangeleService.sortAndPrint();
+        arrayTriangleService.sortAndPrint();
         if (ConsoleUtils.isConfirmed("\nЖелаете повторить? (Yes/No):")) handle();
     }
 }

@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.Map;
 
 
-public class ArrayTriangeleService {
+public class ArrayTriangleService {
     //наработка массива треугольников, его сортировка и вывод
     HashMap<String, Double> mapTriangeles = new HashMap<>();/*словарь имяТреугольника - площадьТреугольника*/
 
